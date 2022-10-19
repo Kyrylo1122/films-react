@@ -11,7 +11,7 @@ export default function Navigation() {
 
       <ul className="nav__list">
         <li className="nav__item">
-          <NavLink to="/" className="nav__link">
+          <NavLink to="/main" className="nav__link">
             Home
           </NavLink>
         </li>

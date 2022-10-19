@@ -1,0 +1,47 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  opacity: 1;
+
+  cursor: pointer;
+}
+
+.modal {
+  background-color: aliceblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  padding: 45px 20px;
+  width: calc(100% - 40px);
+  height: 940px;
+  overflow: auto;
+
+  border-radius: 6px;
+  cursor: default;
+}
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 440px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    height: 552px;
+    width: 704px;
+    padding: 40px 36px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal {
+    height: 558px;
+    width: 814px;
+    padding: 40px 16px;
+  }
+}

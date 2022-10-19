@@ -7,8 +7,4 @@
   width: 100vw;
   transition: opacity 200ms ease-in-out;
   opacity: 1;
-  &.isHidden {
-    opacity: 0;
-    pointer-events: none;
-  }
 }

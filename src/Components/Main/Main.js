@@ -1,11 +1,19 @@
-import FilmsGallery from "./FilmsGallery/FilmsGallery";
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import Modal from "../Modal/Modal";
+import "./Main.css";
 
 export default function Main() {
+  const [isOpenModal, setIsOpenModal] = useState(true);
+
+  const openModal = () => setIsOpenModal(true);
+  const closeModal = () => setIsOpenModal(false);
+
   return (
     <section className="main">
       <div className="container">
-        <h1 className="visually-hidden">Popular films</h1>
-        <FilmsGallery />
+        <Outlet />
+        {isOpenModal && <Modal closeModal={closeModal} />}
       </div>
     </section>
   );

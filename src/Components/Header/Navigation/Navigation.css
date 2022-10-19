@@ -12,7 +12,12 @@
 }
 
 .nav__link {
+  padding: 20px 0;
   font-weight: inherit;
   color: var(--font-white-color);
   background-color: transparent;
+}
+
+.nav__link.active {
+  border-bottom: 1px solid var(--font-orange-color);
 }

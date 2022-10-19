@@ -6,7 +6,7 @@ export default function SearchForm() {
     console.log(values);
   };
   return (
-    <div div className="form__container">
+    <div className="form__container">
       <Formik
         initialValues={{ query: "" }}
         onSubmit={handleSubmit}
