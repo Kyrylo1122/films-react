@@ -1,0 +1,27 @@
+.card__container {
+  height: auto;
+  margin-bottom: 10px;
+}
+.card__img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.meta {
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--font-black-color);
+  min-height: 50px;
+}
+.meta__list {
+  display: flex;
+  color: var(--font-orange-color);
+}
+.meta__item:not(:first-child) {
+  margin-left: 5px;
+}
+
+.meta__item--genres {
+  border-right: 1px solid var(--font-orange-color);
+  padding-right: 5px;
+}

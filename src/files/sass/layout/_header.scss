@@ -1,0 +1,38 @@
+.header {
+  padding: 44px 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(../images/header/header-mob.jpg);
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header/tablet-header.jpg);
+  }
+
+  @media screen and (min-width: 1024px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/header/desktop.header.jpg);
+  }
+  &__input {
+    margin-top: 54px;
+  }
+  &__error {
+    margin-top: 14px;
+    font-weight: 400;
+    color: red;
+    @media screen and (min-width: 768px) {
+      margin-top: 20px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 57px;
+    @media screen and (min-width: 768px) {
+      margin-top: 40px;
+    }
+  }
+}

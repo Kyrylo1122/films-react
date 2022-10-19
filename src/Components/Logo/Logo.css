@@ -1,0 +1,23 @@
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--font-white-color);
+  font-size: 30px;
+}
+
+.logo__text {
+  visibility: hidden;
+  display: none;
+  pointer-events: none;
+  margin-left: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .logo__text {
+    visibility: visible;
+    opacity: 1;
+    display: inline-block;
+    pointer-events: all;
+  }
+}

@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  width: 100%;
+}
+
+.nav__list {
+  margin-left: auto;
+  display: flex;
+}
+.nav__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.nav__link {
+  font-weight: inherit;
+  color: var(--font-white-color);
+  background-color: transparent;
+}

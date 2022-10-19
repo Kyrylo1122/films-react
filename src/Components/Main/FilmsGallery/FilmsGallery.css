@@ -1,0 +1,26 @@
+.films-gallery__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -10px;
+}
+.films-gallery__item {
+  width: 100%;
+  margin: 10px;
+}
+@media screen and (min-width: 768px) {
+  .films-gallery__list {
+    flex-direction: row;
+    margin: -16px;
+    flex-wrap: wrap;
+  }
+  .films-gallery__item {
+    width: calc(100% / 2 - 32px);
+    margin: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .films-gallery__item {
+    width: calc(100% / 4 - 32px);
+  }
+}
