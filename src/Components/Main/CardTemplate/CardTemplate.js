@@ -1,9 +1,9 @@
-import { getGenres } from "../../../Genres/GetGenres";
+// import { getGenres } from "../../../Genres/GetGenres";
 import NoFoundPoster from "../../../images/poster_not_found.png";
 import Watched from "../../MyLibrary/Watched/Watched";
 import "./CardTemplate.css";
 export default function CardTemplate({ film, genres = null, watched }) {
-  const { poster_path, title, genre_ids, release_date } = film;
+  const { poster_path, title, release_date } = film;
   const releaseDate = release_date?.slice(0, 4);
   // let allGenres;
   // if (!genres) {

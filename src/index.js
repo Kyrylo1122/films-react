@@ -9,7 +9,7 @@ import { PersistGate } from "redux-persist/integration/react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/films-react/main/">
       <Provider store={store}>
         <PersistGate persistor={persist}>
           <App />
