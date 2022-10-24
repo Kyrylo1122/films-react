@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/films-react/static/css/main.7c3eda64.css",
+    "main.js": "/films-react/static/js/main.d3f4f648.js",
+    "static/media/desktop.header.jpg": "/films-react/static/media/desktop.header.83526e8703ef72faee43.jpg",
+    "static/media/tablet-header.jpg": "/films-react/static/media/tablet-header.d16d659b7db37db3ac8c.jpg",
+    "static/media/header-mob.jpg": "/films-react/static/media/header-mob.11b882366ae009ed3424.jpg",
+    "index.html": "/films-react/index.html",
+    "main.7c3eda64.css.map": "/films-react/static/css/main.7c3eda64.css.map",
+    "main.d3f4f648.js.map": "/films-react/static/js/main.d3f4f648.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c3eda64.css",
+    "static/js/main.d3f4f648.js"
+  ]
+}
