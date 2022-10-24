@@ -1,0 +1,20 @@
+.watched__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(54, 54, 54, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.watched__title {
+  text-transform: uppercase;
+  color: white;
+}

@@ -7,7 +7,12 @@
 .films-gallery__item {
   width: 100%;
   margin: 10px;
+  padding: 0px;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+  border-radius: 5px;
 }
+
 @media screen and (min-width: 768px) {
   .films-gallery__list {
     flex-direction: row;
@@ -22,5 +27,11 @@
 @media screen and (min-width: 1024px) {
   .films-gallery__item {
     width: calc(100% / 4 - 32px);
+    height: 466px;
+  }
+  .films-gallery__item:hover,
+  :focus {
+    transform: scale(1.1);
+    box-shadow: 0px -0px 30px -9px rgba(66, 68, 90, 1);
   }
 }

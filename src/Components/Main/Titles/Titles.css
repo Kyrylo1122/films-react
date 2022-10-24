@@ -1,0 +1,9 @@
+.title {
+  font-size: 54px;
+  margin-bottom: 30px;
+}
+
+.title > span {
+  font-style: italic;
+  color: var(--font-orange-color);
+}

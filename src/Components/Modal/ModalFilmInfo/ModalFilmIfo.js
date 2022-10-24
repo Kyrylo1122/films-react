@@ -1,29 +1,59 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fullFilmInformation } from "../../../API/fetchAPI";
+import { addFilmToMyLibrary } from "../../../Redux/GallerySlice";
+import getModalGenres from "../../GetModalGenres/GetModalGenres";
+import Loader from "../../Loader/Loader";
+
+import "./ModalFilmInfo.css";
+
 export default function ModalFilmIfo() {
-  const [film, setFilm] = useState({});
-  const { selectedId } = useSelector((state) => state.gallery);
+  const [film, setFilm] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const selectedId = useSelector((state) => state.gallery.selectedId);
+  const dispatch = useDispatch();
+
+  const addFilm = () => {
+    dispatch(addFilmToMyLibrary(film));
+  };
+
   useEffect(() => {
-    fullFilmInformation(selectedId).then((data) => setFilm(data));
+    setLoading(true);
+    try {
+      fullFilmInformation(selectedId)
+        .then((data) => setFilm(data))
+        .finally(() => setLoading(false));
+    } catch (error) {
+      console.log(error);
+    }
   }, [selectedId]);
+
+  if (loading) {
+    return <Loader />;
+  }
+  if (!film) {
+    return;
+  }
   const {
-    poster,
+    poster_path,
     title,
     vote_average,
     vote_count,
     popularity,
     original_title,
-    genre,
+    genres,
     overview,
   } = film;
+  const allGenres = getModalGenres(genres);
+
   return (
-    <ul>
+    <ul className="modal__list">
       <li className="modal__item modal__item--top">
         <div className="modal-card--top">
           <img
-            src="https://image.tmdb.org/t/p/w500/{poster}"
-            alt="poster"
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            alt={original_title}
             className="film__img"
           />
         </div>
@@ -31,7 +61,7 @@ export default function ModalFilmIfo() {
       <li className="modal__item ">
         <div className="modal-card--bottom">
           <h2 className="film__title">{title}</h2>
-          <ul className="film__list list">
+          <ul className="film__list ">
             <li className="film__items">
               <p className="film__items-text">Vote / Votes:</p>
               <div>
@@ -49,23 +79,15 @@ export default function ModalFilmIfo() {
             </li>
             <li className="film__items">
               <p className="film__items-text">Genre:</p>
-              <span className="film__span">{genre} </span>
+              <span className="film__span">{allGenres} </span>
             </li>
           </ul>
           <h3 className="film__about">About</h3>
           <p className="film__description">{overview}</p>
-          <ul className="film__btn-list list">
-            <li className="film__btn-item">
-              <button type="button" className="btn btn--active">
-                ADD TO WATCHED
-              </button>
-            </li>
-            <li className="film__btn-item">
-              <button type="button" className="btn btn--regular">
-                ADD TO QUEUE
-              </button>
-            </li>
-          </ul>
+
+          <button type="button" className="btn btn--active" onClick={addFilm}>
+            Add to My Library
+          </button>
         </div>
       </li>
     </ul>

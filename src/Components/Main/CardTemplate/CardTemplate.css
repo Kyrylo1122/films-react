@@ -2,16 +2,35 @@
   height: auto;
   margin-bottom: 10px;
 }
+.card__img--container {
+  position: relative;
+  overflow: hidden;
+}
 .card__img {
   border-radius: 5px;
   width: 100%;
 }
-
+@media screen and (min-width: 768px) {
+  .card__img {
+    height: 552px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card__img {
+    border-radius: 5px;
+    height: 348px;
+  }
+}
 .meta {
   font-size: 12px;
   line-height: 1.33;
   color: var(--font-black-color);
   min-height: 50px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
 }
 .meta__list {
   display: flex;

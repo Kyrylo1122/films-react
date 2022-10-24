@@ -9,6 +9,7 @@ const initialState = {
   filmGallery: [],
   myLibrary: [],
   page: 1,
+  totalPages: 1,
   query: "",
   selectedId: 894205,
 };
@@ -26,6 +27,20 @@ export const GallerySlice = createSlice({
     addSelectedId(state, action) {
       state.selectedId = action.payload;
     },
+    addAllPages(state, action) {
+      state.totalPages = action.payload;
+    },
+    addQuery(state, action) {
+      state.query = action.payload;
+    },
+    addFilmToMyLibrary(state, action) {
+      state.myLibrary.push(action.payload);
+    },
+    deleteFilmAtMyLibrary(state, action) {
+      state.myLibrary = state.myLibrary.filter(
+        (film) => film.id !== action.payload
+      );
+    },
   },
 });
 
@@ -34,5 +49,12 @@ export const persistedGalleryReducer = persistReducer(
   GallerySlice.reducer
 );
 
-export const { fetchFilmGallery, addPage, addSelectedId } =
-  GallerySlice.actions;
+export const {
+  fetchFilmGallery,
+  addPage,
+  addSelectedId,
+  addAllPages,
+  addQuery,
+  addFilmToMyLibrary,
+  deleteFilmAtMyLibrary,
+} = GallerySlice.actions;

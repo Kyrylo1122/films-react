@@ -1,0 +1,23 @@
+.library__title {
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--font-grey-color);
+
+  font-size: 54px;
+  margin-bottom: 30px;
+}
+.library__title > span {
+  color: var(--font-orange-color);
+}
+
+.library__item:hover,
+:focus {
+  transform: scale(1);
+  box-shadow: none;
+}
+.library__link {
+  background-color: var(--font-orange-color);
+  padding: 15px 20px;
+  color: white;
+  border-radius: 4px;
+}

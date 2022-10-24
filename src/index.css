@@ -16,6 +16,7 @@ button {
   padding: 0;
   cursor: pointer;
 }
+
 p,
 h1,
 h2,
@@ -27,7 +28,6 @@ h6 {
 }
 
 .container {
-  outline: 1px solid brown;
   max-width: 100%;
   padding-left: 20px;
   padding-right: 20px;

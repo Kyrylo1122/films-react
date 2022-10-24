@@ -1,0 +1,12 @@
+.social__list {
+  margin-top: 10px;
+  display: flex;
+}
+.social__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social__item:hover,
+:focus {
+  color: var(--font-orange-color);
+}

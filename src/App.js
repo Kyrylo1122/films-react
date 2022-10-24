@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./Components/Layout/Layout";
-import PopularFilmsGallery from "./Components/Main/PopularFilmsGallery/PopularFilmsGallery";
+import Main from "./Components/Main/Main";
 import Library from "./Components/MyLibrary/Library";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="main" element={<PopularFilmsGallery />} />
+          <Route path="main" element={<Main />} />
           <Route path="library" element={<Library />} />
         </Route>
       </Routes>

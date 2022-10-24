@@ -23,6 +23,10 @@
 .form__input::placeholder {
   color: #fff;
 }
+.form__input:focus,
+:hover {
+  background-color: transparent;
+}
 .form__btn {
   position: absolute;
   right: 0;

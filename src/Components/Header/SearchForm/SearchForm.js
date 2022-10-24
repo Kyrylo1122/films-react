@@ -1,15 +1,21 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import "./SearchForm.css";
 import { BsSearch } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { addPage, addQuery } from "../../../Redux/GallerySlice";
+
 export default function SearchForm() {
-  const handleSubmit = (values) => {
-    console.log(values);
-  };
+  const dispatch = useDispatch();
+
   return (
     <div className="form__container">
       <Formik
         initialValues={{ query: "" }}
-        onSubmit={handleSubmit}
+        onSubmit={(value, { resetForm }) => {
+          dispatch(addQuery(value.query.toUpperCase()));
+          dispatch(addPage(1));
+          resetForm();
+        }}
         className="form__container"
       >
         <Form className="form">
@@ -28,23 +34,4 @@ export default function SearchForm() {
       </Formik>
     </div>
   );
-}
-//   <form className="form">
-{
-  /* <div className="form__container">
-          <input
-            type="text"
-            className="form__input"
-            placeholder="Search film"
-          />
-          <button type="submit" className="form__btn">
-            <svg width="15" height="15" className="form__svg">
-              <use href="./symbol-defs.svg#icon-search"></use>
-            </svg>
-          </button>
-        </div>
-      </form>
-      <p className="header__error hidden">
-        Search result not successful. Enter the correct movie name
-      </p> */
 }
