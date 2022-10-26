@@ -53,14 +53,7 @@ h6 {
     padding-right: 32px;
   }
 }
-.current {
-  border-bottom: 2px solid var(--font-orange-color);
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 ul {
   margin: 0;
   padding: 0;
@@ -69,6 +62,4 @@ ul {
 
 a {
   text-decoration: none;
-  text-decoration: none;
-  color: inherit;
 }

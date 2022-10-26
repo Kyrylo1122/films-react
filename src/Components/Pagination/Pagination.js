@@ -9,16 +9,14 @@ export default function PaginatedItems({ pages }) {
 
   const handlePageClick = (event) => {
     dispatch(addPage(event.selected + 1));
-    console.log(event);
   };
 
   return (
     <div className="pagination__container">
       <ReactPaginate
-        // breakLabel="..."
         nextLabel="next >"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={7}
+        pageRangeDisplayed={5}
         marginPagesDisplayed={0}
         selectedPageRel={null}
         forcePage={page - 1}

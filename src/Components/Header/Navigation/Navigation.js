@@ -1,11 +1,20 @@
+import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { addPage, addQuery } from "../../../Redux/GallerySlice";
 import Logo from "../../Logo/Logo";
 import "./Navigation.css";
 
 export default function Navigation() {
+  const dispatch = useDispatch();
   return (
     <nav className="nav">
-      <Link to="/">
+      <Link
+        to="/"
+        onClick={() => {
+          dispatch(addPage(1));
+          dispatch(addQuery(""));
+        }}
+      >
         <Logo />
       </Link>
 

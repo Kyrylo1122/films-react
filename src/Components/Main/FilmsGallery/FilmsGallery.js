@@ -53,6 +53,9 @@ export default function PopularFilmsGallery({ openModal }) {
       </div>
     );
   }
+  if (films.length === 0) {
+    return <h1>Oops, there are no movies with that name :(</h1>;
+  }
   return (
     <div>
       <ul className="films-gallery__list">

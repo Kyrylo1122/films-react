@@ -22,7 +22,7 @@
   }
 }
 .meta {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.33;
   color: var(--font-black-color);
   min-height: 50px;
@@ -32,9 +32,15 @@
   align-content: center;
   justify-content: space-around;
 }
+@media screen and (min-width: 1024px) {
+  .meta {
+    font-size: 12px;
+  }
+}
 .meta__list {
   display: flex;
   color: var(--font-orange-color);
+  font-size: 16px;
 }
 .meta__item:not(:first-child) {
   margin-left: 5px;

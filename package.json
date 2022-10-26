@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
+    "react-toastify": "^9.0.8",
     "sass": "^1.55.0"
   }
 }

@@ -14,7 +14,7 @@
   background-color: white;
 }
 .pagination__num:hover,
-:focus {
+.pagination__num:focus {
   background-color: var(--font-orange-color);
   color: white;
   outline: none;
@@ -23,6 +23,4 @@
   background-color: red;
   color: white;
   padding: 12px;
-
-  /* opacity: 50%; */
 }

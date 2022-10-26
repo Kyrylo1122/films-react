@@ -44,7 +44,7 @@
 }
 
 .modal__close-btn:hover,
-:focus {
+.modal__close-btn:focus {
   color: var(--font-orange-color);
   transform: scale(1.2);
 }

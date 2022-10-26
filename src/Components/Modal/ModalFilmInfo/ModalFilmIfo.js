@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fullFilmInformation } from "../../../API/fetchAPI";
 import { addFilmToMyLibrary } from "../../../Redux/GallerySlice";
+import NoFoundPoster from "../../../images/not_found.png";
 import getModalGenres from "../../GetModalGenres/GetModalGenres";
+import { toast } from "react-toastify";
 import Loader from "../../Loader/Loader";
 
 import "./ModalFilmInfo.css";
@@ -10,12 +12,18 @@ import "./ModalFilmInfo.css";
 export default function ModalFilmIfo() {
   const [film, setFilm] = useState(null);
   const [loading, setLoading] = useState(false);
+  const myLibraryFilms = useSelector((state) => state.gallery.myLibrary);
 
   const selectedId = useSelector((state) => state.gallery.selectedId);
   const dispatch = useDispatch();
 
   const addFilm = () => {
+    const filmIndex = myLibraryFilms.findIndex((item) => item.id === film.id);
+    if (filmIndex !== -1) {
+      return toast("Film already in library");
+    }
     dispatch(addFilmToMyLibrary(film));
+    return toast(`We add ${film.title} to My library`);
   };
 
   useEffect(() => {
@@ -52,7 +60,11 @@ export default function ModalFilmIfo() {
       <li className="modal__item modal__item--top">
         <div className="modal-card--top">
           <img
-            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                : NoFoundPoster
+            }
             alt={original_title}
             className="film__img"
           />

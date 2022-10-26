@@ -3,10 +3,14 @@
   display: flex;
 }
 .social__item:not(:last-child) {
+  color: black;
   margin-right: 10px;
 }
 
 .social__item:hover,
-:focus {
+.social__item:focus {
   color: var(--font-orange-color);
+}
+.social__link {
+  color: inherit;
 }

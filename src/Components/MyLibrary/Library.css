@@ -11,9 +11,10 @@
 }
 
 .library__item:hover,
-:focus {
+.library__item:focus {
   transform: scale(1);
   box-shadow: none;
+  cursor: default;
 }
 .library__link {
   background-color: var(--font-orange-color);

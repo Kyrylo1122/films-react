@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CardTemplate from "../../Main/CardTemplate/CardTemplate";
 import LibraryBtn from "../LibraryBtn/LibraryBtn";
+import LibraryCardTemplate from "../LibraryCardTemplate/LibraryCardTemplate";
 
 export default function LibraryCard({ film }) {
   const [watched, setWatched] = useState(false);
@@ -9,7 +9,7 @@ export default function LibraryCard({ film }) {
 
   return (
     <div>
-      <CardTemplate film={film} watched={watched} />
+      <LibraryCardTemplate film={film} watched={watched} />
       <LibraryBtn isWatched={watched} onClick={toggleWatchedFilm} film={film} />
     </div>
   );

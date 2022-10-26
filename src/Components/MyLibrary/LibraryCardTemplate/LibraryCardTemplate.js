@@ -1,12 +1,13 @@
-import { getGenres } from "../../../Genres/GetGenres";
 import NoFoundPoster from "../../../images/not_found.png";
+import getModalGenres from "../../GetModalGenres/GetModalGenres";
+import Watched from "../Watched/Watched";
 
-import "./CardTemplate.css";
-export default function CardTemplate({ film, watched }) {
-  const { poster_path, title, release_date, genre_ids } = film;
+export default function LibraryCardTemplate({ film, watched }) {
+  const { poster_path, title, release_date, genres } = film;
+
   const releaseDate = release_date?.slice(0, 4);
-  let allGenres = getGenres(genre_ids);
 
+  const allGenres = getModalGenres(genres);
   return (
     <>
       <div className="card__container">
@@ -22,12 +23,13 @@ export default function CardTemplate({ film, watched }) {
             className="card__img"
             width="100"
           />
+          {watched && <Watched />}
         </div>
       </div>
       <div className="card__meta meta">
         <p className="meta__title"> {title}</p>
         <ul className="meta__list list">
-          <li className="meta__item meta__item--genres"> {allGenres}</li>
+          <li className="meta__item meta__item--genres">{allGenres}</li>
           <li className="meta__item"> {releaseDate}</li>
         </ul>
       </div>

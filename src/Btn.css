@@ -1,0 +1,30 @@
+.btn {
+  padding: 15px 20px;
+  border-radius: 5px;
+
+  font-size: 12px;
+  line-height: 1.33;
+  font-weight: 500;
+  transition: transform 200ms ease-in-out;
+}
+.btn--regular {
+  background-color: white;
+  border: 1px solid var(--font-black-color);
+  color: var(--font-black-color);
+}
+.btn--active {
+  background-color: var(--font-orange-color);
+  border: 1px solid transparent;
+  color: var(--font-white-color);
+}
+.btn--regular:hover,
+.btn--regular:focus {
+  border: 1px solid var(--font-orange-color);
+  color: var(--font-orange-color);
+}
+.btn:hover,
+.btn:focus {
+  transform: scale(1.2);
+  color: rgb(255, 255, 255);
+  background-color: var(--font-orange-color);
+}
