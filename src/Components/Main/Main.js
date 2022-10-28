@@ -1,9 +1,11 @@
-import { useState } from "react";
-import Modal from "../Modal/Modal";
+import { useState, lazy, Suspense } from "react";
 import "./Main.css";
 import FilmsGallery from "./FilmsGallery/FilmsGallery";
 import { useSelector } from "react-redux";
 import { PopularFilmsTitle, SearchedFilmsTitle } from "./Titles/Titles";
+import Loader from "../Loader/Loader";
+
+const Modal = lazy(() => import("../Modal/Modal"));
 
 export default function Main() {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -20,7 +22,11 @@ export default function Main() {
           <SearchedFilmsTitle query={query} />
         )}
         <FilmsGallery openModal={openModal} />
-        {isOpenModal && <Modal closeModal={closeModal} />}
+        {isOpenModal && (
+          <Suspense fallback={<Loader />}>
+            <Modal closeModal={closeModal} />
+          </Suspense>
+        )}
       </div>
     </section>
   );
