@@ -6,8 +6,6 @@ import { useEffect } from "react";
 export default function Modal({ closeModal }) {
   useEffect(() => {
     const Escape = (e) => {
-      
-
       if (e.code === "Escape") {
         closeModal();
       }
