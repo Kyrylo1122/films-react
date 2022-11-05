@@ -5,7 +5,6 @@ import "./Css/Title.css";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { lazy } from "react";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Main from "./Components/Main/Main";
