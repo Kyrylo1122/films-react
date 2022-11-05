@@ -6,7 +6,7 @@ export default function EmptyLibrary() {
       <h2 className="library__title">
         Your library is <span>empty.</span> Let's add something!
       </h2>
-      <Link to="/popular" className="library__link">
+      <Link to="/" className="library__link">
         What is popular right now?
       </Link>
     </div>

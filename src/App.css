@@ -4,3 +4,6 @@
   --font-grey-color: #545454;
   --font-white-color: #ffffff;
 }
+::-webkit-scrollbar {
+  display: none;
+}

@@ -21,7 +21,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route index element={<Popular />} />
-          <Route path={`${HeaderNavNames.POPULAR}`} element={<Popular />} />
           <Route path={`${HeaderNavNames.SEARCH}`} element={<Search />} />
           <Route path={`${HeaderNavNames.LIBRARY}`} element={<Library />} />
         </Route>

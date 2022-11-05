@@ -1,43 +1,19 @@
 .modal {
   background-color: aliceblue;
   position: absolute;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
 
   padding: 45px 20px;
-  width: calc(100% - 40px);
-  height: 540px;
   overflow: auto;
 
   border-radius: 6px;
   cursor: default;
 }
-@media screen and (min-width: 480px) {
-  .modal {
-    width: 440px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .modal {
-    height: 552px;
-    width: 704px;
-    padding: 40px 36px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .modal {
-    height: 558px;
-    width: 814px;
-    padding: 40px 16px;
-  }
-}
-
 .modal__close-btn {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 10px;
+  right: 10px;
   background-color: transparent;
   color: black;
   transition: transform 150ms ease-in-out;
@@ -47,4 +23,26 @@
 .modal__close-btn:focus {
   color: var(--font-orange-color);
   transform: scale(1.2);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    height: 552px;
+    width: 704px;
+    padding: 40px 36px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal__close-btn {
+    top: 30px;
+    right: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .modal {
+    height: 558px;
+    width: 814px;
+    padding: 40px 16px;
+  }
 }

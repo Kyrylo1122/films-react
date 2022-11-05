@@ -19,9 +19,10 @@ export default function Pagination({ pages, onPageClick, activePage }) {
         renderOnZeroPageCount={null}
         containerClassName="pagination"
         pageLinkClassName="pagination__num"
-        previousLinkClassName="pagination__num"
-        nextLinkClassName="pagination__num"
+        previousLinkClassName="pagination__num pagination__aditional"
+        nextLinkClassName="pagination__num pagination__aditional"
         activeLinkClassName="pagination__active"
+        pageClassName="pagination__item"
       />
     </div>
   );
