@@ -53,7 +53,7 @@ export default function Search() {
           You are searching: <span>{query}</span>
         </h1>
       ) : (
-        <h1 className="title">Let's search some films</h1>
+        <p className="text">Let's search something...</p>
       )}
 
       <FilmsGallery

@@ -7,3 +7,9 @@
   font-style: italic;
   color: var(--font-orange-color);
 }
+.text {
+  font-size: 24px;
+
+  color: var(--font-orange-color);
+  font-style: italic;
+}
