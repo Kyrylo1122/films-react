@@ -16,6 +16,7 @@
   font-weight: inherit;
   color: var(--font-white-color);
   background-color: transparent;
+  text-transform: capitalize;
 }
 .nav__link:hover,
 .nav__link:focus {

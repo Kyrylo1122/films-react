@@ -1,34 +1,37 @@
-import { useDispatch } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
-import { addPage, addQuery } from "../../../Redux/GallerySlice";
+// import { useDispatch } from "react-redux";
+// import { addPage, addQuery } from "../../../Redux/GallerySlice";
 import Logo from "../../Logo/Logo";
 import "./Navigation.css";
 
-export default function Navigation() {
-  const dispatch = useDispatch();
+import { HeaderNavNames } from "../HeaderNavNames";
+import { NavLink } from "react-router-dom";
+const NavigationContent = [
+  { id: 1, text: HeaderNavNames.POPULAR },
+  { id: 2, text: HeaderNavNames.SEARCH },
+  { id: 3, text: HeaderNavNames.LIBRARY },
+];
+
+export default function Navigation({ visibleForm, notVisibleForm }) {
   return (
     <nav className="nav">
-      <Link
-        to="/"
-        onClick={() => {
-          dispatch(addPage(1));
-          dispatch(addQuery(""));
-        }}
-      >
-        <Logo />
-      </Link>
+      <Logo />
 
       <ul className="nav__list">
-        <li className="nav__item">
-          <NavLink to="/main" className="nav__link">
-            Home
-          </NavLink>
-        </li>
-        <li className="nav__item">
-          <NavLink to="/library" className="nav__link">
-            My library
-          </NavLink>
-        </li>
+        {NavigationContent.map(({ id, text }) => (
+          <li key={id} className="nav__item">
+            <NavLink
+              to={`${text}`}
+              className="nav__link"
+              onClick={() => {
+                text === HeaderNavNames.SEARCH
+                  ? visibleForm()
+                  : notVisibleForm();
+              }}
+            >
+              {text}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );

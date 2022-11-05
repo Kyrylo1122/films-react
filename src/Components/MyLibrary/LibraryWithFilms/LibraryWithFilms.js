@@ -1,5 +1,4 @@
-import LibraryCard from "../LibraryCard/LibraryCard";
-
+import LibraryCardTemplate from "../LibraryCardTemplate/LibraryCardTemplate";
 export default function LibraryWithFilms({ films }) {
   return (
     <>
@@ -8,7 +7,7 @@ export default function LibraryWithFilms({ films }) {
         {films.map((film) => {
           return (
             <li key={film.id} className="films-gallery__item library__item">
-              <LibraryCard film={film} />
+              <LibraryCardTemplate film={film} />
             </li>
           );
         })}

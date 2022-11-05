@@ -1,27 +1,34 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import "./Btn.css";
-import Layout from "./Components/Layout/Layout";
+import "./Css/Btn.css";
+import "./Css/Title.css";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { lazy } from "react";
-
-const Main = lazy(() => import("./Components/Main/Main"));
-const Library = lazy(() => import("./Components/MyLibrary/Library"));
+// import { lazy } from "react";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Main from "./Components/Main/Main";
+import { HeaderNavNames } from "./Components/Header/HeaderNavNames";
+import Library from "./Components/MyLibrary/Library";
+import Search from "./Components/Search/Search";
+import Popular from "./Components/Popular/Popular";
 
 function App() {
   return (
     <div className="App">
       <ToastContainer />
+      <Header />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Main />} />
-
-          <Route path="main" element={<Main />} />
-          <Route path="library" element={<Library />} />
+        <Route path="/" element={<Main />}>
+          <Route index element={<Popular />} />
+          <Route path={`${HeaderNavNames.POPULAR}`} element={<Popular />} />
+          <Route path={`${HeaderNavNames.SEARCH}`} element={<Search />} />
+          <Route path={`${HeaderNavNames.LIBRARY}`} element={<Library />} />
         </Route>
       </Routes>
+
+      <Footer />
     </div>
   );
 }

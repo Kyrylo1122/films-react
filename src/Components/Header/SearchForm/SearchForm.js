@@ -2,7 +2,11 @@ import { Formik, Form, Field } from "formik";
 import "./SearchForm.css";
 import { BsSearch } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { addPage, addQuery } from "../../../Redux/GallerySlice";
+import { addQuery } from "../../../Redux/GallerySlice";
+import * as Yup from "yup";
+const SignupSchema = Yup.object().shape({
+  query: Yup.string().required("Required"),
+});
 
 export default function SearchForm() {
   const dispatch = useDispatch();
@@ -13,9 +17,9 @@ export default function SearchForm() {
         initialValues={{ query: "" }}
         onSubmit={(value, { resetForm }) => {
           dispatch(addQuery(value.query.toUpperCase()));
-          dispatch(addPage(1));
           resetForm();
         }}
+        validationSchema={SignupSchema}
         className="form__container"
       >
         <Form className="form">

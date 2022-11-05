@@ -1,5 +1,6 @@
-import { getGenres } from "../../../Genres/GetGenres";
-import NoFoundPoster from "../../../images/not_found.png";
+import { getGenres } from "../../Genres/GetGenres";
+import NoFoundPoster from "../../images/not_found.png";
+import Watched from "../MyLibrary/Watched/Watched";
 
 import "./CardTemplate.css";
 export default function CardTemplate({ film, watched }) {
@@ -22,6 +23,7 @@ export default function CardTemplate({ film, watched }) {
             className="card__img"
             width="100"
           />
+          {watched && <Watched />}
         </div>
       </div>
       <div className="card__meta meta">

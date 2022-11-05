@@ -22,7 +22,8 @@ export default function ModalFilmIfo() {
     if (filmIndex !== -1) {
       return toast("Film already in library");
     }
-    dispatch(addFilmToMyLibrary(film));
+    const genre_ids = film.genres.map((genre) => genre.id);
+    dispatch(addFilmToMyLibrary({ ...film, genre_ids }));
     return toast(`We add ${film.title} to My library`);
   };
 
