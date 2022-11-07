@@ -19,13 +19,15 @@ export default function Navigation({ visibleForm, notVisibleForm }) {
         {NavigationContent.map(({ id, text }) => (
           <li key={id} className="nav__item">
             <NavLink
-              to={text === "popular" ? "/" : `${text}`}
-              end={text === "popular" ? true : false}
+              to={text === HeaderNavNames.POPULAR ? "/" : `${text}`}
+              end={text === HeaderNavNames.POPULAR ? true : false}
               className="nav__link"
               onClick={() => {
-                text === HeaderNavNames.SEARCH
-                  ? visibleForm()
-                  : notVisibleForm();
+                if (text === HeaderNavNames.SEARCH) {
+                  visibleForm();
+                  return;
+                }
+                notVisibleForm();
               }}
             >
               {text}
@@ -36,34 +38,3 @@ export default function Navigation({ visibleForm, notVisibleForm }) {
     </nav>
   );
 }
-
-//  <ul className="nav__list">
-//    <li key={1} className="nav__item">
-//      <NavLink
-//        to={"/"}
-//        className="nav__link"
-//        onClick={() => notVisibleForm()}
-//        end
-//      >
-//        {HeaderNavNames.POPULAR}
-//      </NavLink>
-//    </li>
-//    <li key={1} className="nav__item">
-//      <NavLink
-//        to={`/${HeaderNavNames.SEARCH}`}
-//        className="nav__link"
-//        onClick={() => visibleForm()}
-//      >
-//        {HeaderNavNames.SEARCH}
-//      </NavLink>
-//    </li>
-//    <li key={1} className="nav__item">
-//      <NavLink
-//        to={`/${HeaderNavNames.LIBRARY}`}
-//        className="nav__link"
-//        onClick={() => notVisibleForm()}
-//      >
-//        {HeaderNavNames.LIBRARY}
-//      </NavLink>
-//    </li>
-//  </ul>;
