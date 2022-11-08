@@ -11,8 +11,12 @@ export default function Modal({ closeModal }) {
       }
     };
     window.addEventListener("keydown", Escape);
+    document.body.style.overflow = "hidden";
 
-    return () => window.removeEventListener("keydown", Escape);
+    return () => {
+      window.removeEventListener("keydown", Escape);
+      document.body.style.overflow = "unset";
+    };
   });
 
   const handleClick = (e) => {
